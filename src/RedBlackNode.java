@@ -38,11 +38,27 @@ public class RedBlackNode extends BinaryNode {
 		return rightRightRotation(g, x);
 	}
 	
-	public void colorSwap() {
-		
+	public void colorSwap(RedBlackNode x) {
+		x.setColor(x.getColor()-1);
+		if (x.left() != null) {
+			RedBlackNode temp = (RedBlackNode)(x.left());
+			temp.setColor(temp.getColor() + 1);
+		}
+		if (x.right() != null) {
+			RedBlackNode temp = (RedBlackNode)(x.right());
+			temp.setColor(temp.getColor() + 1);
+		}
 	}
-	public void recolor() {
-		
+	public void recolor(RedBlackNode p) {
+		p.setColor(p.getColor() + 1);
+		RedBlackNode temp = (RedBlackNode)(p.right());
+		if (temp != null) {
+			temp.setColor(temp.getColor() - 1);
+		}
+		temp = (RedBlackNode)(p.left());
+		if (temp != null) {
+			temp.setColor(temp.getColor() - 1);
+		}
 	}
 	
 	public void setColor(int c) {
