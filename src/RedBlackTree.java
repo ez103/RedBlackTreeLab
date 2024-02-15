@@ -176,6 +176,8 @@ public class RedBlackTree extends BinaryTree {
 		}
 	}
 	
+	// add the deleting methods
+	
 	public void colorSwap(RedBlackNode x) {
 		x.setColor(x.getColor()-1);
 		if (x.left() != null) {
