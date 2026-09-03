@@ -189,13 +189,13 @@ public class BinaryTree {
 		q.offer(root);
 		
 		while (!q.isEmpty()) {
-			BinaryNode boob = q.poll();
-			temp += boob.getValue() + " ";
-			if (boob.left() != null) {
-				q.offer(boob.left());
+			BinaryNode bn = q.poll();
+			temp += bn.getValue() + " ";
+			if (bn.left() != null) {
+				q.offer(bn.left());
 			}
-			if (boob.right() != null) {
-				q.offer(boob.right());
+			if (bn.right() != null) {
+				q.offer(bn.right());
 			}
 		}
 		
